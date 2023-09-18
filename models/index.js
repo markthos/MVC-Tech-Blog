@@ -2,10 +2,10 @@ const User = require("./user");
 const BlogPost = require("./blogPost");
 const Comments = require("./comments");
 
-// User.hasMany(BlogPost, {
-//   foreignKey: "user_id",
-//   onDelete: "CASCADE",
-// });
+User.hasMany(BlogPost, {
+  foreignKey: "user_id",
+  onDelete: "CASCADE",
+});
 
 // User.hasMany(Comments, {
 //   foreignKey: "comment_id",

@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Introduction to JavaScript",
+        "content": "JavaScript is a versatile programming language...",
+        "owner_id": 1,
+        "date_created": "2021-01-16T16:28:32.615Z"
+    },
+    {
+        "title": "Introduction to Python",
+        "content": "Python is a versatile programming language...",
+        "owner_id": 1,
+        "date_created": "2021-02-16T16:28:32.615Z"
+    },
+    {
+        "title": "Introduction to Java",
+        "content": "Java is a versatile programming language...",
+        "owner_id": 3,
+        "date_created": "2021-03-16T16:28:32.615Z"
+    },
+    {
+        "title": "Introduction to C++",
+        "content": "C++ is a versatile programming language...",
+        "owner_id": 4,
+        "date_created": "2021-04-16T16:28:32.615Z"
+    }
+  ]
