@@ -1,0 +1,52 @@
+[
+    {
+        "comment_text": "Great post! I leanered a lot from it. Thanks!",
+        "blogPost_id": 1,
+        "creator_id": 1
+    },
+    {
+        "comment_text": "I have some questions about AI. Can you help me?",
+        "blogPost_id": 2,
+        "creator_id": 2
+    },
+    {
+        "comment_text": "I agree with you. I think that AI is the future of technology.",
+        "blogPost_id": 2,
+        "creator_id": 3
+    },
+    {
+        "comment_text": "Java is the best programming language. I love it!",
+        "blogPost_id": 3,
+        "creator_id": 4
+    },
+    {
+        "comment_text": "C++ is so freaking hard. I don't understand it at all.",
+        "blogPost_id": 4,
+        "creator_id": 1
+    },
+    {
+        "comment_text": "I have some questions about AI. Can you help me?",
+        "blogPost_id": 6,
+        "creator_id": 6
+    },
+    {
+        "comment_text": "I have some questions about AI. Can you help me?",
+        "blogPost_id": 7,
+        "creator_id": 7
+    },
+    {
+        "comment_text": "I have some questions about AI. Can you help me?",
+        "blogPost_id": 8,
+        "creator_id": 8
+    },
+    {
+        "comment_text": "I have some questions about AI. Can you help me?",
+        "blogPost_id": 9,
+        "creator_id": 9
+    },
+    {
+        "comment_text": "I have some questions about AI. Can you help me?",
+        "blogPost_id": 10,
+        "creator_id": 10
+    }
+]

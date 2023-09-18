@@ -7,9 +7,9 @@ User.hasMany(BlogPost, {
   onDelete: "CASCADE",
 });
 
-// User.hasMany(Comments, {
-//   foreignKey: "comment_id",
-// });
+User.hasMany(Comments, {
+  foreignKey: "comment_id",
+});
 
 // User.belongsToMany(BlogPost, {
 //   through: {
@@ -29,21 +29,21 @@ User.hasMany(BlogPost, {
 //   as: "collaborators",
 // });
 
-// BlogPost.belongsTo(User, {
-//   foreignKey: "owner_id", 
-// });
+BlogPost.belongsTo(User, {
+  foreignKey: "owner_id", 
+});
 
-// BlogPost.hasMany(Comments, {
-//   foreignKey: "blogPost_id",
-// });
+BlogPost.hasMany(Comments, {
+  foreignKey: "blogPost_id",
+});
 
-// Comments.belongsTo(BlogPost, {
-//   foreignKey: "blogPost_id",
-// });
+Comments.belongsTo(BlogPost, {
+  foreignKey: "blogPost_id",
+});
 
-// Comments.belongsTo(User, {
-//   foreignKey: "creator_id",
-// });
+Comments.belongsTo(User, {
+  foreignKey: "creator_id",
+});
 
 // Collaborator.belongsTo(User, {
 //   foreignKey: "user_id",
