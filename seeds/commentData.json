@@ -23,30 +23,5 @@
         "comment_text": "C++ is so freaking hard. I don't understand it at all.",
         "blogPost_id": 4,
         "creator_id": 1
-    },
-    {
-        "comment_text": "I have some questions about AI. Can you help me?",
-        "blogPost_id": 6,
-        "creator_id": 6
-    },
-    {
-        "comment_text": "I have some questions about AI. Can you help me?",
-        "blogPost_id": 7,
-        "creator_id": 7
-    },
-    {
-        "comment_text": "I have some questions about AI. Can you help me?",
-        "blogPost_id": 8,
-        "creator_id": 8
-    },
-    {
-        "comment_text": "I have some questions about AI. Can you help me?",
-        "blogPost_id": 9,
-        "creator_id": 9
-    },
-    {
-        "comment_text": "I have some questions about AI. Can you help me?",
-        "blogPost_id": 10,
-        "creator_id": 10
     }
 ]

@@ -1,5 +1,4 @@
 // create a model for comments that will be associated with blog posts
-
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 const dayjs = require('dayjs');

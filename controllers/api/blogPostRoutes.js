@@ -1,4 +1,5 @@
 const express = require("express");
+const { Comments } = require("../../models");
 
 // Adjust the path to your User model
 const BlogPost = require("../../models").BlogPost;
@@ -18,7 +19,11 @@ router.get("/", async (req, res) => {
 // get user by id
 router.get("/:id", async (req, res) => {
   try {
-    const blogPostData = await BlogPost.findByPk(req.params.id);
+    const blogPostData = await BlogPost.findByPk(req.params.id,
+        {
+            include: [{model: Comments}],
+        }
+    );
     if (!blogPostData) {
       res.status(404).json({ message: "No blog posts with this id!" });
       return;
