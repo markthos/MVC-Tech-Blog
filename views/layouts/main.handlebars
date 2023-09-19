@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.6.1/ci.min.css">
+        {{!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.6.1/ci.min.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="/css/materialize.min.css">
-        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/style.css"> --}}
+        
     <title>🌐 Blog-O-Sphere</title>
     </head>
     <body>
@@ -20,7 +21,7 @@
                             {{#if logged_in}}
                                 <li>Welcome, {{user_name}} </li>
                                 <li><a href="/blogpost">Blog-O-Sphere</a></li>
-                                <li><a href="/logout" id="logout-link" >Log Out</a></li>
+                                <li><a href="/logout" id="logout-link" >Logout</a></li>
                                 <li><a href="/about">About</a></li>
                             {{else}}
                                 <li><a href="/login">Members Only</a></li>
@@ -65,7 +66,9 @@
                 </div>
             </section>
       </footer>
-        <script src="/js/materialize.min.js"></script>
-        <script src="/js/logout.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        {{!-- <script src="/js/materialize.min.js"></script> --}}
+        <script src="/main.js"></script>
+
     </body>
 </html>
