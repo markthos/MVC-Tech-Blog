@@ -13,6 +13,7 @@ router.post("/login", async (req, res) => {
 
   try {
     const user = await User.findOne({ where: { email: email } });
+    console.log(user);
 
     const id = user.dataValues.id;
 
