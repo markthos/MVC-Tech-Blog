@@ -55,3 +55,49 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+// Add an event listener for each toggle button
+document.querySelectorAll('[id^="toggle-comments-"]').forEach((button) => {
+    button.addEventListener("click", () => {
+      const postId = button.id.split("-")[2];
+      const commentsContainer = document.getElementById(`comments-${postId}`);
+      
+      // Toggle the visibility of comments container
+      if (commentsContainer.style.display === "none") {
+        commentsContainer.style.display = "block";
+      } else {
+        commentsContainer.style.display = "none";
+      }
+    });
+  });
+  
+// Add an event listener for form submission
+document.querySelectorAll('[id^="add-comment-form-"]').forEach((form) => {
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+  
+      // Get the comment content from the form
+      const postId = form.id.split("-")[3]; // Extract the post ID from the form ID
+      const commentContent = document.getElementById(`comment-content-${postId}`).value;
+  
+      // Send the comment data to the server
+      const response = await fetch("/add-comment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          postId,
+          content: commentContent,
+        }),
+      });
+  
+      if (response.ok) {
+        // Handle successful comment submission (e.g., refresh the comments section)
+        // You can also provide user feedback here (e.g., showing a success message)
+      } else {
+        // Handle error response from the server (e.g., display an error message)
+      }
+    });
+  });
+  

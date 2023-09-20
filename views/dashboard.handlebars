@@ -1,0 +1,22 @@
+{{!-- Homepage that renders blogposts from all users --}}
+<div class="taskTitan_banner">
+    <h2>Enter the Blog-O-Sphere</h2>
+</div>
+
+<section class="section container">
+    <div class="row">
+        <div class="col s12 m8 offset-m2 l8 offset-l2">
+            <p class="flow-text center-align">Blog Posts</p>
+            <div class="collection" id="blogpost-style" >
+                {{#each blogs}}
+                    <div class="blogpost">
+                    <h2>{{title}}</h2>
+                    <p>{{content}}</p>
+                    <p>By {{user.first_name}} {{user.last_name}}</p>
+                    <p>Created on {{format_date created_at}}</p>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>

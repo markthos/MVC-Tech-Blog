@@ -49,6 +49,15 @@ router.get("/homepage", async (req, res) => {
             model: User,
             attributes: ["first_name", "last_name"],
           },
+          {
+            model: Comments,
+            include: [
+              {
+                model: User,
+                attributes: ["first_name", "last_name"],
+              },
+            ],
+          }
         ],
         order: [["date_created", "DESC"]],
       });
@@ -71,7 +80,7 @@ router.get("/dashboard", async (req, res) => {
     try {
       const blogData = await BlogPost.findAll({
         where: {
-          user_id: req.session.user_id,
+          owner_id: req.session.user_id,
         },
         include: [
           {

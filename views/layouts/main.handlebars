@@ -15,11 +15,11 @@
             <div class="navbar-fixed">
                 <nav class="berkley-navbar">
                     <div class="nav-wrapper container">
-                        <a href="/" class="brand-logo">🌐</a>
+                        <a href="/homepage" class="brand-logo">🌐</a>
                         <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
                             {{#if logged_in}}
-                                <li>Welcome, {{user_name}} </li>
+                                <li>{{user_name}}</li>
                                 <li><a href="/dashboard">Dashboard</a></li>
                                 <li><a href="/logout" id="logout-link" >Logout</a></li>
                                 <li><a href="/about">About</a></li>
@@ -34,7 +34,7 @@
             </div>
             <ul class="sidenav" style="background-color: #003262" id="mobile">
                 {{#if logged_in}}
-                    <li class="white-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome, {{user_name}}</li>
+                    <li class="white-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{user_name}}</li>
                     <li><a class="white-text" href="/dashboard">Dashboard</a></li>
                     <li><a class="white-text" href="/logout" id="mobile-logout-link" >Log Out</a></li>
                     <li><a class="white-text" href="/about">About</a></li>
