@@ -76,19 +76,18 @@ document.querySelectorAll('[id^="add-comment-form-"]').forEach((form) => {
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
   
-      // Get the comment content from the form
-      const postId = form.id.split("-")[3]; // Extract the post ID from the form ID
+      // Get the comment content from the form and the blogpost id the comment is for
+      const postId = form.id.split("-")[3]; // Extract the id from the blog post id
       const commentContent = document.getElementById(`comment-content-${postId}`).value;
   
       // Send the comment data to the server
-      const response = await fetch("/add-comment", {
+      const response = await fetch("/api/comment/:id", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          postId,
-          content: commentContent,
+          comment_text: commentContent,
         }),
       });
   
