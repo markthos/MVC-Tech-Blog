@@ -30,4 +30,4 @@ Handlebars.registerHelper('hasFullAccess', function(collaborator, project, user,
 });
 
 
-module.exports = { compare, format_date};
+module.exports = { compare, format_date, format_time};
