@@ -39,7 +39,8 @@ router.get("/signup", async (req, res) => {
     }
   });
 
-// Takes you to the homepage
+// Takes you to the homepage.handlebars which renders all the current blog posts that have been made
+
 router.get("/homepage", async (req, res) => {
     try {
       const blogData = await BlogPost.findAll({

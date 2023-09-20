@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.ok) {
                     // Redirect to the Landing page
                     localStorage.setItem('toastMessage', 'logged out');
-                    window.location.replace("/");
+                    window.location.replace("/homepage");
                 } else {
                     alert(response.statusText);
                 }
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (response.ok) {
                     // Redirect to the login page
                     localStorage.setItem('toastMessage', 'logged out');
-                    window.location.replace("/");
+                    window.location.replace("/homepage");
                 } else {
                     alert(response.statusText);
                 }

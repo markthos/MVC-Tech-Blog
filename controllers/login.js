@@ -71,7 +71,7 @@ router.post('/logout', (req, res) => {
   if (req.session.logged_in) {
     // Remove the session variables
     req.session.destroy(() => {
-      res.redirect('/'); // Redirect to landing page
+      res.redirect('/homepage'); // Redirect to homepage
     });
   } else {
     res.status(404).end();
