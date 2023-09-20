@@ -1,3 +1,37 @@
+/* UC Berkley colors global*/
+:root {
+	--berkeley-blue: #003262;
+	--california-gold: #fdb515;
+	--metallic-gold: #bc9b6a;
+	--founders-rock: #2d637f;
+}
+
+
+.berkley-navbar {
+    background-color: var(--berkeley-blue);
+    color: var(--california-gold)
+}
+
+#blogpost-style {
+    background-color: var(--founders-rock);
+    color: white
+}
+
+.taskTitan_banner {
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: var(--california-gold);
+    color: white;
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 100%;
+  }
 
 #top-menu {
     display: none;

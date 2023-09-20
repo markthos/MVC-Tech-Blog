@@ -13,14 +13,14 @@
     <body>
         <header>
             <div class="navbar-fixed">
-                <nav class="deep-purple">
+                <nav class="berkley-navbar">
                     <div class="nav-wrapper container">
-                        <a href="/" class="brand-logo">Tech Blog-O-Sphere</a>
+                        <a href="/" class="brand-logo">🌐</a>
                         <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
                             {{#if logged_in}}
                                 <li>Welcome, {{user_name}} </li>
-                                <li><a href="/blogpost">Blog-O-Sphere</a></li>
+                                <li><a href="/dashboard">Dashboard</a></li>
                                 <li><a href="/logout" id="logout-link" >Logout</a></li>
                                 <li><a href="/about">About</a></li>
                             {{else}}
@@ -32,10 +32,10 @@
                     </div>
                 </nav>
             </div>
-            <ul class="sidenav deep-purple" id="mobile">
+            <ul class="sidenav" style="background-color: #003262" id="mobile">
                 {{#if logged_in}}
                     <li class="white-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Welcome, {{user_name}}</li>
-                    <li><a class="white-text" href="/blogpost">Blog-O-Sphere</a></li>
+                    <li><a class="white-text" href="/dashboard">Dashboard</a></li>
                     <li><a class="white-text" href="/logout" id="mobile-logout-link" >Log Out</a></li>
                     <li><a class="white-text" href="/about">About</a></li>
                 {{else}}
@@ -50,7 +50,7 @@
             {{{ body }}}
         </main>
 
-        <footer class="page-footer pink">
+        <footer class="page-footer" style="background-color: #fdb515;" >
             <section class="section container">
                 <p class="grey-text text-lighten-4">
                     Made Possible by <a class="purple-text text-lighten-4" href="/about">Mark T.</a>
