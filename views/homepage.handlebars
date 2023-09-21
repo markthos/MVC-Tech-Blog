@@ -8,6 +8,21 @@
         <div class="col s12 m8 offset-m2 l8 offset-l2">
             <p class="flow-text center-align">Blog Posts</p>
             <div class="collection" id="blogpost-style" >
+                <button class="btn" id="create-blogpost" style="display: none">Create Blog Post</button>
+                <div id="create-blogpost-form" style="display: none;">
+                    <form id="add-blogpost-form">
+                        <div class="input-field">
+                            <input type="text" name="title" id="blogpost-title">
+                            <label for="blogpost-title">Title</label>
+                        </div>
+                        <div class="input-field">
+                            <textarea id="blogpost-content" class="materialize-textarea"></textarea>
+                            <label for="blogpost-content">Content</label>
+                        </div>
+                        <button type="submit" class="btn">Create</button>
+                        <button type="button" class="btn" id="cancel-blogpost">Cancel</button>
+                    </form>
+                </div>
                 {{#each blogs}}
                     <div class="blogpost">
                     <h2>{{title}}</h2>
@@ -22,7 +37,7 @@
                         <p>By {{user.first_name}} {{user.last_name}}</p>
                         </div>
                     {{/each}}
-                    <form id="add-comment-form-{{id}}" class="add-comment-form">
+                    <form id="comment-form-{{id}}" class="add-comment-form">
                         <div class="input-field">
                         <textarea id="comment-content-{{id}}" class="materialize-textarea"></textarea>
                         <label for="comment-content-{{id}}">Add your comment</label>

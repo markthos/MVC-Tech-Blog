@@ -56,6 +56,47 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+
+
+// Add an event listener for each toggle button
+document.querySelectorAll('[id^="toggle-comments-"]').forEach((button) => {
+    button.addEventListener("click", () => {
+      const postId = button.id.split("-")[2];
+      const commentsContainer = document.getElementById(`comments-${postId}`);
+      
+      // Toggle the visibility of comments container
+      if (commentsContainer.style.display === "none") {
+        commentsContainer.style.display = "block";
+      } else {
+        commentsContainer.style.display = "none";
+      }
+    });
+  });
+  
+// add event listener to comment form to submit the form
+
+document.querySelector(`[id^=comment-form-]`).addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const blogPost_id = event.target.id.split("-")[2];
+    const comment_text = document.querySelector(`#comment-content-${blogPost_id}`).value.trim();
+    console.log(blogPost_id, comment_text);
+
+    if (comment_text && blogPost_id) {
+        const response = await fetch(`/api/comment`, {
+            method: "POST",
+            body: JSON.stringify({ comment_text, blogPost_id }),
+            headers: { "Content-Type": "application/json" },
+        });
+
+        if (response.ok) {
+            // Redirect to the homepage
+            localStorage.setItem('toastMessage', 'comment created');
+            document.location.replace("/homepage");
+        }
+    }
+});
+
 // add event listener to create blog post button to open the form
 document.querySelector("#create-blogpost").addEventListener("click", () => {
     document.querySelector("#create-blogpost-form").style.display = "block";
@@ -115,70 +156,4 @@ document.querySelectorAll('[id^="delete-blogpost-"]').forEach((button) => {
     });
 });
 
-
-// Add an event listener for each toggle button
-document.querySelectorAll('[id^="toggle-comments-"]').forEach((button) => {
-    button.addEventListener("click", () => {
-      const postId = button.id.split("-")[2];
-      const commentsContainer = document.getElementById(`comments-${postId}`);
-      
-      // Toggle the visibility of comments container
-      if (commentsContainer.style.display === "none") {
-        commentsContainer.style.display = "block";
-      } else {
-        commentsContainer.style.display = "none";
-      }
-    });
-  });
-  
-// comment add handler
-const commentFormHandler = async (event) => {
-    event.preventDefault();
-
-    const comment_text = document.querySelector("#comment-text").value.trim();
-    const blogPost_id = document.querySelector("#blogPost_id").value.trim();
-
-    if (comment_text && blogPost_id) {
-        const response = await fetch("/api/comment", {
-            method: "POST",
-            body: JSON.stringify({ comment_text, blogPost_id }),
-            headers: { "Content-Type": "application/json" },
-        });
-
-        if (response.ok) {
-            // Redirect to the homepage
-            localStorage.setItem('toastMessage', 'comment added');
-            // hide the form
-            document.querySelector("#comment-form").style.display = "none";
-            // reload the page
-            document.location.reload();
-        } else {
-            alert(response.statusText);
-        }
-    }
-}
-
-
-
-// comment delete handler
-const deleteCommentHandler = async (event) => {
-    event.preventDefault();
-
-    const comment_id = event.target.getAttribute("data-comment-id");
-
-    if (comment_id) {
-        const response = await fetch(`/api/comment/${comment_id}`, {
-            method: "DELETE",
-            headers: { "Content-Type": "application/json" },
-        });
-
-        if (response.ok) {
-            // Redirect to the homepage
-            localStorage.setItem('toastMessage', 'comment deleted');
-            document.location.reload();
-        } else {
-            alert(response.statusText);
-        }
-    }
-}
 

@@ -1,14 +1,23 @@
 const express = require('express');
-const { BlogPost, User } = require('../../models');
+const { Comments, BlogPost, User } = require('../../models');
 
 const router = express.Router();
 
+// get all comments
+router.get('/', async (req, res) => {
+    try {
+        const commentData = await Comments.findAll();
+        res.status(200).json(commentData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 // add comment to the current blog post
-router.post('/:id', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const newComment = await Comments.create({
             ...req.body,
-            blogPost_id: req.params.id,
             creator_id: req.session.user_id,
         });
 
