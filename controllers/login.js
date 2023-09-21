@@ -7,6 +7,15 @@ const User = require("../models").User;
 
 const router = express.Router();
 
+router.get("/", async (req, res) => {
+  try {
+    res.render("login");
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("Fly you fools. Server Error");
+  }
+});
+
 router.post("/login", async (req, res) => {
   const email = req.body.email;
   const password = req.body.password;

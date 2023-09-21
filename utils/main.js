@@ -90,9 +90,14 @@ document.querySelector(`[id^=comment-form-]`).addEventListener("submit", async (
         });
 
         if (response.ok) {
-            // Redirect to the homepage
-            localStorage.setItem('toastMessage', 'comment created');
-            document.location.replace("/homepage");
+            // redirect to login page if the user is not logged in
+            // else reload the page
+            if (response.redirected) {
+                window.location.replace(response.url);
+            } else {
+                localStorage.setItem('toastMessage', 'comment created');
+                document.location.reload();
+            }
         }
     }
 });
