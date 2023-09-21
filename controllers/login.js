@@ -50,6 +50,15 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// to signup page
+router.get('/signup', async (req, res) => {
+  try {
+    res.render('signup');
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Fly you fools. Server Error');
+  }
+});
 
 //to signup
 router.post('/signup', async (req, res) => {

@@ -1,4 +1,4 @@
-{{!-- Homepage that renders blogposts from all users --}}
+{{!-- Dashboard that renders only the user's blogs --}}
 <div class="container center-align">
     <div class="blog_banner">
         <h2>{{user_name}}'s Sphere-O-Influence</h2>
@@ -58,4 +58,14 @@
     </div>
 </section>
 
+{{!-- for error handling // cannot be triggered --}}
+<form id="comment-form-{{id}}" class="comment-form" style="display:none">
+    <div class="input-field">
+    <textarea id="comment-content-{{id}}" class="materialize-textarea"></textarea>
+    <label for="comment-content-{{id}}">Add your comment</label>
+    </div>
+    <button type="submit" class="btn" id="comment-content-{{id}}">Submit</button>
+</form>
+
 <script src="/js/blogpost.js"></script>
+<script src="/js/comment.js"></script>
