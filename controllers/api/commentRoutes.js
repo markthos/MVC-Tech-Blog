@@ -1,6 +1,6 @@
 const express = require('express');
 const { Comments } = require('../../models');
-const withAuth = require('../../public/auth');
+const withAuth = require('../../utils/auth');
 
 const router = express.Router();
 
