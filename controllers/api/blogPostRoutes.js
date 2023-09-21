@@ -1,5 +1,6 @@
 const express = require("express");
 const { Comments } = require("../../models");
+const dayjs = require("dayjs");
 
 // Adjust the path to your User model
 const BlogPost = require("../../models").BlogPost;
@@ -37,9 +38,11 @@ router.get("/:id", async (req, res) => {
 // create new blog post
 router.post("/", async (req, res) => {
   try {
+    const now = dayjs();
     const blogPostData = await BlogPost.create({
       ...req.body,
       owner_id: req.session.user_id,
+      date_created: now,
     });
     res.status(200).json(blogPostData);
   } catch (err) {

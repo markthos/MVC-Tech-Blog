@@ -1,8 +1,5 @@
 const router = require('express').Router();
 const { BlogPost, User, Comments } = require('../models');
-// const withAuth = require('../utils/auth');
-const Sequelize = require('sequelize');
-const dayjs = require('dayjs');
 
 // Takes you to the landing page
 router.get("/", async (req, res) => {
