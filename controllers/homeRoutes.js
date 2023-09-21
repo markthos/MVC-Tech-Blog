@@ -87,6 +87,15 @@ router.get("/dashboard", async (req, res) => {
             model: User,
             attributes: ["first_name", "last_name"],
           },
+          {
+            model: Comments,
+            include: [
+              {
+                model: User,
+                attributes: ["first_name", "last_name"],
+              },
+            ],
+          }
         ],
         order: [["date_created", "DESC"]],
       });
