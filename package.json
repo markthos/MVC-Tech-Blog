@@ -1,5 +1,5 @@
 {
-    "name": "task-titan",
+    "name": "mvc-tech-blog",
     "version": "1.0.0",
     "description": "How to murder tasks",
     "main": "server.js",
@@ -11,18 +11,14 @@
     },
     "repository": {
       "type": "git",
-      "url": "git+https://github.com/markthos/Task-Titan.git"
+      "url": "git+https://github.com/markthos/MVC-Tech-Blog"
     },
-    "keywords": [
-      "task",
-      "titan"
-    ],
-    "author": "Task Titans",
+    "author": "Mark T",
     "license": "ISC",
     "bugs": {
-      "url": "https://github.com/markthos/Task-Titan/issues"
+      "url": "https://github.com/markthos/MVC-Tech-Blog/issues"
     },
-    "homepage": "https://github.com/markthos/Task-Titan#readme",
+    "homepage": "https://github.com/markthos/MVC-Tech-Blog#readme",
     "dependencies": {
       "bcrypt": "^5.1.0",
       "connect-session-sequelize": "^7.1.7",
