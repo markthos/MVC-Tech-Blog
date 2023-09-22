@@ -49,6 +49,22 @@
                         <button type="submit" class="btn" id="comment-content-{{id}}">Submit</button>
                     </form>
                     </div>
+                    {{!-- button for edit blog post --}}
+                    <button class="btn" id="edit-blogpost-{{id}}">Edit Blog Post</button>
+                    <div id="edit-blogpost-container-{{id}}" style="display: none;">
+                        <form id="edit-blogpost-form">
+                            <div class="input-field">
+                                <input type="text" name="title" id="blogpost-title-{{id}}" value="{{title}}">
+                                <label for="blogpost-title-{{id}}">Title</label>
+                            </div>
+                            <div class="input-field">
+                                <textarea id="blogpost-content-{{id}}" class="materialize-textarea">{{content}}</textarea>
+                                <label for="blogpost-content-{{id}}">Content</label>
+                            </div>
+                            <button type="submit" class="btn" id="update-blogpost-{{id}}">Update</button>
+                            <button type="button" class="btn" id="cancel-blogpost-{{id}}">Cancel</button>
+                        </form>
+                    </div>
                     {{!-- button for delete blog post --}}
                     <button class="btn" id="delete-blogpost-{{id}}">Delete Blog Post</button>
                 {{/each}}

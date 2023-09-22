@@ -1,3 +1,6 @@
+
+
+
 // add event listener to create blog post button to open the form
 document.querySelector("#create-blogpost").addEventListener("click", () => {
     document.querySelector("#create-blogpost-form").style.display = "block";
@@ -31,6 +34,51 @@ document.querySelector("#create-blogpost-form").addEventListener("submit", async
 document.querySelector("#cancel-blogpost").addEventListener("click", () => {
     document.querySelector("#create-blogpost-form").style.display = "none";
 });
+
+// add event listener for each toggle button
+document.querySelectorAll('[id^="edit-blogpost-"]').forEach((button) => {
+    button.addEventListener("click", () => {
+        const blogPost_id = button.id.split("-")[2];
+        const editBlogpostContainer = document.getElementById(`edit-blogpost-container-${blogPost_id}`);
+
+        // toggle the visibility of comments container
+        if (editBlogpostContainer.style.display === "none") {
+            
+            editBlogpostContainer.style.display = "block";
+        } else {
+            editBlogpostContainer.style.display = "none";
+        }
+    });
+});
+
+
+
+// add event listener to edit blog post form to submit the form
+// document.querySelectorAll('[id^="edit-blogpost-form-"]').forEach((form) => {
+//     form.addEventListener("submit", async (event) => {
+//         event.preventDefault();
+
+//         const blogPost_id = form.id.split("-")[3];
+//         const title = document.querySelector(`#blogpost-title-${blogPost_id}`).value.trim();
+//         const content = document.querySelector(`#blogpost-content-${blogPost_id}`).value.trim();
+
+//         if (title && content && blogPost_id) {
+//             const response = await fetch(`/api/blogPost/${blogPost_id}`, {
+//                 method: "PUT",
+//                 body: JSON.stringify({ title, content }),
+//                 headers: { "Content-Type": "application/json" },
+//             });
+
+//             if (response.ok) {
+//                 // Redirect to the dashboard
+//                 localStorage.setItem('toastMessage', 'blog post updated');
+//                 document.location.replace("/dashboard");
+//             } else {
+//                 alert(response.statusText);
+//             }
+//         }
+//     });
+// });
 
 
 // add event listener to delete blog post button
