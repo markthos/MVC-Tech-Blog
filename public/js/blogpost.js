@@ -51,35 +51,32 @@ document.querySelectorAll('[id^="edit-blogpost-"]').forEach((button) => {
     });
 });
 
+// add event listener to edit blog post form to submit the form when the update button is pressed
+document.querySelectorAll('[id^="update-blogpost-"]').forEach((button) => {
+    button.addEventListener("click", async (event) => {
+        event.preventDefault();
 
+        const blogPost_id = button.id.split("-")[2];
+        const title = document.querySelector(`#blogpost-title-${blogPost_id}`).value.trim();
+        const content = document.querySelector(`#blogpost-content-${blogPost_id}`).value.trim();
 
-// add event listener to edit blog post form to submit the form
-// document.querySelectorAll('[id^="edit-blogpost-form-"]').forEach((form) => {
-//     form.addEventListener("submit", async (event) => {
-//         event.preventDefault();
+        if (title && content && blogPost_id) {
+            const response = await fetch(`/api/blogPost/${blogPost_id}`, {
+                method: "PUT",
+                body: JSON.stringify({ title, content }),
+                headers: { "Content-Type": "application/json" },
+            });
 
-//         const blogPost_id = form.id.split("-")[3];
-//         const title = document.querySelector(`#blogpost-title-${blogPost_id}`).value.trim();
-//         const content = document.querySelector(`#blogpost-content-${blogPost_id}`).value.trim();
-
-//         if (title && content && blogPost_id) {
-//             const response = await fetch(`/api/blogPost/${blogPost_id}`, {
-//                 method: "PUT",
-//                 body: JSON.stringify({ title, content }),
-//                 headers: { "Content-Type": "application/json" },
-//             });
-
-//             if (response.ok) {
-//                 // Redirect to the dashboard
-//                 localStorage.setItem('toastMessage', 'blog post updated');
-//                 document.location.replace("/dashboard");
-//             } else {
-//                 alert(response.statusText);
-//             }
-//         }
-//     });
-// });
-
+            if (response.ok) {
+                // Redirect to the dashboard
+                localStorage.setItem('toastMessage', 'blog post updated');
+                document.location.replace("/dashboard");
+            } else {
+                alert(response.statusText);
+            }
+        }
+    });
+});
 
 // add event listener to delete blog post button
 document.querySelectorAll('[id^="delete-blogpost-"]').forEach((button) => {
